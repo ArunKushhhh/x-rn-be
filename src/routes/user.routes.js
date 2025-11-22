@@ -17,7 +17,7 @@ router.get("/profile/:username", getUserProfile);
 // update profile => auth => update
 router.put("/profile", protectRoute, updateProfile);
 // to sync the authenticated user with our mongoDB Database
-router.post("/sync", syncUser);
+router.post("/sync", protectRoute, syncUser);
 //get the current user
 router.post("/me", protectRoute, getCurrentUser);
 //to follow a user
